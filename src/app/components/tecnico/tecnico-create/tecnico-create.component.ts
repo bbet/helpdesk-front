@@ -39,13 +39,14 @@ export class TecnicoCreateComponent implements OnInit {
       this.toast.success('Técnico cadastrado com sucesso!', 'Cadastro')
       this.router.navigate(['tecnicos']);
     }, ex => {
+      console.log(ex);
       if (ex.error.errors) {
-        ex.error.errors.array.forEach(element => {
+        ex.error.errors.forEach(element => {
           this.toast.error(element.message, 'Erro');
         });
       } else {
         this.toast.error(ex.error.message, 'Erro');
-      }
+      }     
     });
   }
 
