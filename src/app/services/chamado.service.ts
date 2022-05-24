@@ -12,6 +12,6 @@ export class ChamadoService {
   constructor(private http: HttpClient) { }
 
   findAll(): Observable<Chamado[]>{
-    return this.http.get<Chamado[]>(`${API_CONFIG.baseUrl}/chamados`)
+    return this.http.get<Chamado[]>(`${API_CONFIG.baseUrl}/chamados`);
   }
 }
